@@ -1,0 +1,7 @@
+#Folders
+.vscode/
+target/
+
+#Files
+*.html
+*.log
