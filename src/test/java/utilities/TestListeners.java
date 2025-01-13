@@ -1,46 +1,51 @@
 package utilities;
 
 import com.aventstack.extentreports.Status;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import utilities.extentreports.ExtentManager;
+
 import static utilities.extentreports.ExtentTestManager.getTest;
 import static utilities.extentreports.ExtentTestManager.startTest;
 
+/* Test Listeners
+ * Mostly for logs right now. No need to change anything here unless needed like for cleanups or something. Supports parallel testing. */
 public class TestListeners implements ITestListener {
     @Override
     public void onStart(ITestContext context) {
-        Log.info("Starting Execution of Test Suite: " + context.getCurrentXmlTest().getSuite().getName());
+        Loggers.info("Starting Execution of Test Suite: " + context.getCurrentXmlTest().getSuite().getName());
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        Log.info("Finished Execution of Test Suite: " + context.getCurrentXmlTest().getSuite().getName());
+        Loggers.info("Finished Execution of Test Suite: " + context.getCurrentXmlTest().getSuite().getName());
         ExtentManager.extentReports.flush();
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        Log.info("Starting Test: " + getTestSuiteClassMethodName(result));
+        Loggers.info("Starting Test: " + getTestSuiteClassMethodName(result));
         startTest(getTestSuiteClassMethodName(result)).assignCategory(result.getTestContext().getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        Log.info("Test Succeeded: " + getTestSuiteClassMethodName(result));
+        Loggers.info("Test Succeeded: " + getTestSuiteClassMethodName(result));
         getTest().log(Status.PASS, "Successful!");
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        Log.info("Test Skipped: " + getTestSuiteClassMethodName(result));
+        Loggers.info("Test Skipped: " + getTestSuiteClassMethodName(result));
         getTest().log(Status.SKIP, result.getThrowable());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        Log.info("Test Failed: " + getTestSuiteClassMethodName(result));
+        Loggers.info("Test Failed: " + getTestSuiteClassMethodName(result));
         getTest().log(Status.FAIL, result.getThrowable());
     }
 

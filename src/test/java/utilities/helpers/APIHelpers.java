@@ -1,18 +1,25 @@
 package utilities.helpers;
 
 import io.restassured.response.Response;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 import net.datafaker.Faker;
+
 import objects.api.Booking;
 import objects.api.BookingDates;
 import objects.api.BookingDetails;
 import objects.api.Token;
-import utilities.Log;
+
+import utilities.Loggers;
 import utilities.PropertiesManager;
 import utilities.RestFilter;
+
 import static io.restassured.RestAssured.given;
 
+/* Helpers - API Hitter
+ * This class is for creating the request of the API to avoid putting everything in the test classes. */
 public class APIHelpers {
         private static PropertiesManager pm = new PropertiesManager();
 
@@ -41,7 +48,7 @@ public class APIHelpers {
                                         .post(pm.getAPIProperties().getProperty("ENDPOINT_BOOKING"));
                         booking = response.getBody().as(Booking.class);
                 } catch (IOException e) {
-                        Log.error(e.getMessage());
+                        Loggers.error(e.getMessage());
                 }
 
                 return booking;
@@ -57,7 +64,7 @@ public class APIHelpers {
                                         .delete(pm.getAPIProperties().getProperty("ENDPOINT_BOOKING") + "/"
                                                         + bookingId);
                 } catch (IOException e) {
-                        Log.error(e.getMessage());
+                        Loggers.error(e.getMessage());
                 }
 
                 return response;
@@ -71,7 +78,7 @@ public class APIHelpers {
                                         .filter(new RestFilter())
                                         .get(pm.getAPIProperties().getProperty("ENDPOINT_BOOKING") + "/" + bookingId);
                 } catch (IOException e) {
-                        Log.error(e.getMessage());
+                        Loggers.error(e.getMessage());
                 }
 
                 return response;
@@ -88,7 +95,7 @@ public class APIHelpers {
                                         .filter(new RestFilter())
                                         .post(pm.getAPIProperties().getProperty("ENDPOINT_BOOKING"));
                 } catch (IOException e) {
-                        Log.error(e.getMessage());
+                        Loggers.error(e.getMessage());
                 }
 
                 return response;
@@ -107,7 +114,7 @@ public class APIHelpers {
                                         .filter(new RestFilter())
                                         .put(pm.getAPIProperties().getProperty("ENDPOINT_BOOKING") + "/" + bookingId);
                 } catch (IOException e) {
-                        Log.error(e.getMessage());
+                        Loggers.error(e.getMessage());
                 }
 
                 return response;
@@ -132,7 +139,7 @@ public class APIHelpers {
                                         .path("token")
                                         .toString();
                 } catch (IOException e) {
-                        Log.error(e.getMessage());
+                        Loggers.error(e.getMessage());
                 }
 
                 return token;

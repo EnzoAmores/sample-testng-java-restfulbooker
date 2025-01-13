@@ -4,20 +4,20 @@ import com.aventstack.extentreports.Status;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
+
 import static utilities.extentreports.ExtentTestManager.getTest;
 
+/* RestFilter - Overriden Functions
+ * This class is for getting request and response body to put in the report for better readability and usability. */
 public class RestFilter implements Filter {
-    /*
-     * Overriden this method for the purpose of catching the request and response
-     * and putting it in the Extent Report.
-     * Will only be produced if the class is initialized and including it in the
-     * .filter() while building the request specs in the other methods.
-     */
+    /* Overriden this method for the purpose of catching the request and response and putting it in the Extent Report.
+     * Will only be produced if the class is initialized and including it in the .filter() while building the request specs in the other methods. */
     @Override
     public Response filter(FilterableRequestSpecification requestSpecification,
             FilterableResponseSpecification responseSpecification, FilterContext filterContext) {
@@ -31,11 +31,7 @@ public class RestFilter implements Filter {
         return response;
     }
 
-    /*
-     * Create Request Details
-     * Fitted for appearing a bit pretty in Extent Reports .html report file hence
-     * the HTML tags.
-     */
+    /* Created for for formatting the request body to a more readable format in Extent Reports .html report file hence the HTML tags. */
     private String createRequestDetails(FilterableRequestSpecification request) {
         StringBuilder requestDetails = new StringBuilder();
 
@@ -59,11 +55,7 @@ public class RestFilter implements Filter {
         return requestDetails.toString();
     }
 
-    /*
-     * Create Response Details
-     * Fitted for appearing a bit pretty in Extent Reports .html report file hence
-     * the HTML tags.
-     */
+    /* Created for for formatting the response body to a more readable format in Extent Reports .html report file hence the HTML tags. */
     private String createResponseDetails(Response response) {
         StringBuilder responseDetails = new StringBuilder();
 
@@ -88,9 +80,9 @@ public class RestFilter implements Filter {
 
             prettyJsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject);
         } catch (JsonMappingException e) {
-            Log.error(e.getMessage());
+            Loggers.error(e.getMessage());
         } catch (JsonProcessingException e) {
-            Log.error(e.getMessage());
+            Loggers.error(e.getMessage());
         }
 
         return prettyJsonString;
