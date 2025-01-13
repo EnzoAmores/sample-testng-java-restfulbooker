@@ -2,7 +2,6 @@ package utilities;
 
 import com.aventstack.extentreports.Status;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.restassured.filter.Filter;
@@ -79,8 +78,6 @@ public class RestFilter implements Filter {
             Object jsonObject = objectMapper.readValue(uglyJsonString, Object.class);
 
             prettyJsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject);
-        } catch (JsonMappingException e) {
-            Loggers.error(e.getMessage());
         } catch (JsonProcessingException e) {
             Loggers.error(e.getMessage());
         }
