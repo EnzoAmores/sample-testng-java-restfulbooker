@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/* NOTE: Create a different method for every properties file. Easier this way to maintain if one file is renamed. */
+/* Properties Manager - .properties File Reader
+ * NOTE:Create a different method for every properties file.Easier this way to maintain if one file is renamed. */
 public class PropertiesManager {
     Properties properties = new Properties();
 
@@ -16,7 +17,7 @@ public class PropertiesManager {
 
             properties.load(inputStream);
         } catch (IOException e) {
-            Log.error(e.getMessage());
+            Loggers.error(e.getMessage());
         } finally {
             if (inputStream != null)
                 inputStream.close();

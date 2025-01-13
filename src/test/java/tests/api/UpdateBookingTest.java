@@ -1,12 +1,17 @@
 package tests.api;
 
 import io.restassured.response.Response;
+
 import java.util.concurrent.TimeUnit;
+
 import net.datafaker.Faker;
+
 import objects.api.Booking;
 import objects.api.BookingDates;
 import objects.api.BookingDetails;
+
 import org.testng.annotations.Test;
+
 import utilities.helpers.APIHelpers;
 import utilities.setups.BaseAPISetup;
 import utilities.validations.BookingValidations;

@@ -5,26 +5,30 @@ import org.apache.logging.log4j.LogManager;
 
 /* Loggers
  * No need to modify this class unless there is a need. Avoid in adding non-logs methods/snippets of code. */
-public class Log {
-    private static final Logger log = LogManager.getLogger(Log.class);
+public class Loggers {
+    private static final Logger logger = LogManager.getLogger(Loggers.class);
+
+    private Loggers() {
+
+    }
 
     public static void debug(String message) {
-        log.debug(message);
+        logger.debug(message);
     }
 
     public static void error(String message) {
-        log.error(message);
+        logger.error(message);
     }
 
     public static void fatal(String message) {
-        log.fatal(message);
+        logger.fatal(message);
     }
 
     public static void info(String message) {
-        log.info(message);
+        logger.info(message);
     }
 
     public static void warn(String message) {
-        log.warn(message);
+        logger.warn(message);
     }
 }

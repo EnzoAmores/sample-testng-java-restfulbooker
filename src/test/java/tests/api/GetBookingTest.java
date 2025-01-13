@@ -1,8 +1,11 @@
 package tests.api;
 
 import io.restassured.response.Response;
+
 import objects.api.Booking;
+
 import org.testng.annotations.Test;
+
 import utilities.helpers.APIHelpers;
 import utilities.setups.BaseAPISetup;
 import utilities.validations.BookingValidations;

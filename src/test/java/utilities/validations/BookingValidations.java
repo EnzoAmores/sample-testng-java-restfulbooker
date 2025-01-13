@@ -1,11 +1,14 @@
 package utilities.validations;
 
 import io.restassured.response.Response;
+
 import objects.api.Booking;
 import objects.api.BookingDetails;
+
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+/* Validations - Booking */
 public class BookingValidations {
         private SoftAssert assertions = new SoftAssert();
 
