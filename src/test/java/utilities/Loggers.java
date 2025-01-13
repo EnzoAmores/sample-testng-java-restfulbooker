@@ -8,10 +8,6 @@ import org.apache.logging.log4j.LogManager;
 public class Loggers {
     private static final Logger logger = LogManager.getLogger(Loggers.class);
 
-    private Loggers() {
-
-    }
-
     public static void debug(String message) {
         logger.debug(message);
     }
