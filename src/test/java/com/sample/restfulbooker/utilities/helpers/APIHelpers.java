@@ -126,8 +126,7 @@ public class APIHelpers {
         return response;
     }
 
-    public static Response putRequestWithReportingForUpdateBooking(String token, Integer bookingId,
-                                                                   BookingDetails bookingRequestBody) {
+    public static Response putRequestWithReportingForUpdateBooking(String token, Integer bookingId, BookingDetails bookingRequestBody) {
         Response response = null;
 
         try {
