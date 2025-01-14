@@ -1,4 +1,4 @@
-package utilities.setups;
+package com.sample.restfulbooker.utilities.setups;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

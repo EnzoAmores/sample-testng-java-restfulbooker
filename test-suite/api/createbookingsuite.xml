@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Create Booking Test Suite" thread-count="10" parallel="methods">
     <listeners>
-        <listener class-name="utilities.TestListeners"/>
+        <listener class-name="com.sample.restfulbooker.utilities.TestListeners"/>
     </listeners>
     <test name="Create Booking Test">
         <classes>
-            <class name="tests.api.CreateBookingTest"/>
+            <class name="com.sample.restfulbooker.tests.CreateBookingTest"/>
         </classes>
     </test>
 </suite>

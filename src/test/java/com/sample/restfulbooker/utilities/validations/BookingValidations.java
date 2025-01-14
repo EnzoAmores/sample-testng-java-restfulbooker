@@ -1,8 +1,8 @@
-package utilities.validations;
+package com.sample.restfulbooker.utilities.validations;
 
 import io.restassured.response.Response;
-import objects.api.Booking;
-import objects.api.BookingDetails;
+import com.sample.restfulbooker.objects.api.Booking;
+import com.sample.restfulbooker.objects.api.BookingDetails;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 

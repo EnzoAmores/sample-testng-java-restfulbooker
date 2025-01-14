@@ -1,13 +1,13 @@
-package utilities;
+package com.sample.restfulbooker.utilities;
 
 import com.aventstack.extentreports.Status;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utilities.extentreports.ExtentManager;
+import com.sample.restfulbooker.utilities.extentreports.ExtentManager;
 
-import static utilities.extentreports.ExtentTestManager.getTest;
-import static utilities.extentreports.ExtentTestManager.startTest;
+import static com.sample.restfulbooker.utilities.extentreports.ExtentTestManager.getTest;
+import static com.sample.restfulbooker.utilities.extentreports.ExtentTestManager.startTest;
 
 /* Test Listeners
  * Mostly for logs right now. No need to change anything here unless needed like for cleanups or something. Supports parallel testing. */
