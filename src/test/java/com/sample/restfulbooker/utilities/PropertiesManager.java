@@ -14,6 +14,7 @@ public class PropertiesManager {
             properties.load(inputStream);
         } catch (IOException e) {
             Loggers.error(e.getMessage());
+            throw new IOException(e.getMessage());
         }
 
         return properties;
