@@ -1,10 +1,10 @@
 package com.sample.restfulbooker.utilities;
 
 import com.aventstack.extentreports.Status;
+import com.sample.restfulbooker.utilities.extentreports.ExtentManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import com.sample.restfulbooker.utilities.extentreports.ExtentManager;
 
 import static com.sample.restfulbooker.utilities.extentreports.ExtentTestManager.getTest;
 import static com.sample.restfulbooker.utilities.extentreports.ExtentTestManager.startTest;

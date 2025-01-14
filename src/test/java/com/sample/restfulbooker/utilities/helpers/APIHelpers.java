@@ -1,18 +1,18 @@
 package com.sample.restfulbooker.utilities.helpers;
 
-import io.restassured.response.Response;
-import net.datafaker.Faker;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import com.sample.restfulbooker.objects.api.Booking;
 import com.sample.restfulbooker.objects.api.BookingDates;
 import com.sample.restfulbooker.objects.api.BookingDetails;
 import com.sample.restfulbooker.objects.api.Token;
-import org.testng.SkipException;
 import com.sample.restfulbooker.utilities.Loggers;
 import com.sample.restfulbooker.utilities.PropertiesManager;
 import com.sample.restfulbooker.utilities.RestFilter;
-
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import io.restassured.response.Response;
+import net.datafaker.Faker;
+import org.testng.SkipException;
 
 import static io.restassured.RestAssured.given;
 
