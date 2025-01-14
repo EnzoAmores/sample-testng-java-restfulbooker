@@ -3,7 +3,7 @@ package utilities.extentreports;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-/* Extent Report - Report & System Information 
+/* Extent Report - Report & System Information
  * Required class for generating Extent Reports. Add/Modify/Remove values only if needed especially the Report Name. */
 public class ExtentManager {
     public static final ExtentReports extentReports = new ExtentReports();
