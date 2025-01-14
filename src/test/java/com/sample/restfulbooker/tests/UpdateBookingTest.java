@@ -33,8 +33,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingDetailsSuccess(updateBookingRequestBody, response);
     }
@@ -56,8 +55,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(null)
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingDetailsSuccess(updateBookingRequestBody, response);
     }
@@ -79,8 +77,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -102,8 +99,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -125,8 +121,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -148,8 +143,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -167,8 +161,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                 .bookingdates(null)
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -190,8 +183,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -212,8 +204,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(),
-                booking.getBookingid(), updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingBadRequestFailure(response);
     }
@@ -235,8 +226,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(null, booking.getBookingid(),
-                updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(null, booking.getBookingid(), updateBookingRequestBody);
 
         bookingValidations.validateBookingForbiddenFailure(response);
     }
@@ -257,8 +247,7 @@ public class UpdateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), null,
-                updateBookingRequestBody);
+        Response response = APIHelpers.putRequestWithReportingForUpdateBooking(APIHelpers.generateToken(), null, updateBookingRequestBody);
 
         bookingValidations.validateBookingMethodNotAllowedFailure(response);
     }
