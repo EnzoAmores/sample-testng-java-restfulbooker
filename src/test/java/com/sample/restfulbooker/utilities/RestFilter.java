@@ -39,14 +39,12 @@ public class RestFilter implements Filter {
 
         if (request.getHeaders().size() > 0) {
             requestDetails.append("<li>Headers:<ul>");
-            request.getHeaders().asList().forEach(
-                    h -> requestDetails.append(String.format("<li>%s</li>", h.toString().replaceFirst("=", ": "))));
+            request.getHeaders().asList().forEach(h -> requestDetails.append(String.format("<li>%s</li>", h.toString().replaceFirst("=", ": "))));
             requestDetails.append("</ul></li>");
         }
 
         if (request.getBody() != null)
-            requestDetails.append(
-                    String.format("<li>Body:</li>%s", jsonPrettyFormatter(request.getBody()).replace("\n", "<br />")));
+            requestDetails.append(String.format("<li>Body:</li>%s", jsonPrettyFormatter(request.getBody()).replace("\n", "<br />")));
 
         requestDetails.append("</ul>");
 
@@ -61,8 +59,7 @@ public class RestFilter implements Filter {
         responseDetails.append(String.format("<li>Code: %s</li>", response.getStatusCode()));
 
         if (response.getBody() != null)
-            responseDetails
-                    .append(String.format("<li>Body:</li>%s", response.asPrettyString().replace("\n", "<br />")));
+            responseDetails.append(String.format("<li>Body:</li>%s", response.asPrettyString().replace("\n", "<br />")));
 
         responseDetails.append("</ul>");
 

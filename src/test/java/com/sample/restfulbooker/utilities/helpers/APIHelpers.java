@@ -40,7 +40,6 @@ public class APIHelpers {
             }
         } catch (IOException e) {
             Loggers.error(skipDueToCodeIssueMessage + e.getMessage());
-            throw new SkipException(skipDueToCodeIssueMessage + e.getMessage());
         }
     }
 
