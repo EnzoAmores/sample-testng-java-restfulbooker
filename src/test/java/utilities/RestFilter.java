@@ -3,7 +3,6 @@ package utilities;
 import com.aventstack.extentreports.Status;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
 import io.restassured.response.Response;
@@ -19,7 +18,7 @@ public class RestFilter implements Filter {
      * Will only be produced if the class is initialized and including it in the .filter() while building the request specs in the other methods. */
     @Override
     public Response filter(FilterableRequestSpecification requestSpecification,
-            FilterableResponseSpecification responseSpecification, FilterContext filterContext) {
+                           FilterableResponseSpecification responseSpecification, FilterContext filterContext) {
         Response response = filterContext.next(requestSpecification, responseSpecification);
 
         if (getTest() != null) {

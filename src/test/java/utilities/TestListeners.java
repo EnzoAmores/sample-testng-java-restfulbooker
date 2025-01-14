@@ -1,11 +1,9 @@
 package utilities;
 
 import com.aventstack.extentreports.Status;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import utilities.extentreports.ExtentManager;
 
 import static utilities.extentreports.ExtentTestManager.getTest;

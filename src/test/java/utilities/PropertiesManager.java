@@ -10,20 +10,17 @@ public class PropertiesManager {
     Properties properties = new Properties();
 
     private Properties getProperties(String fileName) throws IOException {
-        InputStream inputStream = null;
-
-        try {
-            inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
-
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName)) {
             properties.load(inputStream);
         } catch (IOException e) {
             Loggers.error(e.getMessage());
-        } finally {
-            if (inputStream != null)
-                inputStream.close();
         }
 
         return properties;
+    }
+
+    public Properties getAnotherProperties() throws IOException {
+        return getProperties("another.properties");
     }
 
     public Properties getAPIProperties() throws IOException {
