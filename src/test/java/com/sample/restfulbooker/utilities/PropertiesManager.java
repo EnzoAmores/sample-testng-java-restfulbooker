@@ -1,4 +1,4 @@
-package utilities;
+package com.sample.restfulbooker.utilities;
 
 import java.io.IOException;
 import java.io.InputStream;

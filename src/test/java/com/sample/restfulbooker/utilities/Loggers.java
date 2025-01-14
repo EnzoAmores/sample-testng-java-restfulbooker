@@ -1,4 +1,4 @@
-package utilities;
+package com.sample.restfulbooker.utilities;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

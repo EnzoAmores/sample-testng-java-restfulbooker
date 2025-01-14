@@ -1,4 +1,4 @@
-package utilities;
+package com.sample.restfulbooker.utilities;
 
 import com.aventstack.extentreports.Status;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -9,7 +9,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
 
-import static utilities.extentreports.ExtentTestManager.getTest;
+import static com.sample.restfulbooker.utilities.extentreports.ExtentTestManager.getTest;
 
 /* RestFilter - Overriden Functions
  * This class is for getting request and response body to put in the report for better readability and usability. */
@@ -29,7 +29,7 @@ public class RestFilter implements Filter {
         return response;
     }
 
-    /* Created for for formatting the request body to a more readable format in Extent Reports .html report file hence the HTML tags. */
+    /* Created for formatting the request body to a more readable format in Extent Reports .html report file hence the HTML tags. */
     private String createRequestDetails(FilterableRequestSpecification request) {
         StringBuilder requestDetails = new StringBuilder();
 
@@ -53,7 +53,7 @@ public class RestFilter implements Filter {
         return requestDetails.toString();
     }
 
-    /* Created for for formatting the response body to a more readable format in Extent Reports .html report file hence the HTML tags. */
+    /* Created for formatting the response body to a more readable format in Extent Reports .html report file hence the HTML tags. */
     private String createResponseDetails(Response response) {
         StringBuilder responseDetails = new StringBuilder();
 

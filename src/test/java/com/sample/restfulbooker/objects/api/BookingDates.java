@@ -1,4 +1,4 @@
-package objects.api;
+package com.sample.restfulbooker.objects.api;
 
 import lombok.Builder;
 import lombok.extern.jackson.Jacksonized;

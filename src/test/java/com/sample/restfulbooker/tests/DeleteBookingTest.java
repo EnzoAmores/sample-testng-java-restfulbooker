@@ -1,11 +1,11 @@
-package tests.api;
+package com.sample.restfulbooker.tests;
 
+import com.sample.restfulbooker.objects.api.Booking;
 import io.restassured.response.Response;
-import objects.api.Booking;
 import org.testng.annotations.Test;
-import utilities.helpers.APIHelpers;
-import utilities.setups.BaseAPISetup;
-import utilities.validations.BookingValidations;
+import com.sample.restfulbooker.utilities.helpers.APIHelpers;
+import com.sample.restfulbooker.utilities.setups.BaseAPISetup;
+import com.sample.restfulbooker.utilities.validations.BookingValidations;
 
 public class DeleteBookingTest extends BaseAPISetup {
     BookingValidations bookingValidations = new BookingValidations();
