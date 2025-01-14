@@ -1,10 +1,10 @@
 package com.sample.restfulbooker.utilities.extentreports;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 /* Extent Report - Logging Functions
  * Required class for generating Extent Reports. No need to modify the code here. Works even with parallel execution. */

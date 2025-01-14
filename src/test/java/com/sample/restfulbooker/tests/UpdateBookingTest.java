@@ -3,12 +3,12 @@ package com.sample.restfulbooker.tests;
 import com.sample.restfulbooker.objects.api.Booking;
 import com.sample.restfulbooker.objects.api.BookingDates;
 import com.sample.restfulbooker.objects.api.BookingDetails;
-import io.restassured.response.Response;
-import net.datafaker.Faker;
-import org.testng.annotations.Test;
 import com.sample.restfulbooker.utilities.helpers.APIHelpers;
 import com.sample.restfulbooker.utilities.setups.BaseAPISetup;
 import com.sample.restfulbooker.utilities.validations.BookingValidations;
+import io.restassured.response.Response;
+import net.datafaker.Faker;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 

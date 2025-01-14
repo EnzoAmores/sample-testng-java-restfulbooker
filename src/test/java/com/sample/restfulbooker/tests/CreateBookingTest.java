@@ -1,15 +1,15 @@
 package com.sample.restfulbooker.tests;
 
+import java.util.concurrent.TimeUnit;
+
 import com.sample.restfulbooker.objects.api.BookingDates;
 import com.sample.restfulbooker.objects.api.BookingDetails;
-import io.restassured.response.Response;
-import net.datafaker.Faker;
-import org.testng.annotations.Test;
 import com.sample.restfulbooker.utilities.helpers.APIHelpers;
 import com.sample.restfulbooker.utilities.setups.BaseAPISetup;
 import com.sample.restfulbooker.utilities.validations.BookingValidations;
-
-import java.util.concurrent.TimeUnit;
+import io.restassured.response.Response;
+import net.datafaker.Faker;
+import org.testng.annotations.Test;
 
 public class CreateBookingTest extends BaseAPISetup {
     Faker faker = new Faker();

@@ -1,11 +1,11 @@
 package com.sample.restfulbooker.tests;
 
 import com.sample.restfulbooker.objects.api.Booking;
-import io.restassured.response.Response;
-import org.testng.annotations.Test;
 import com.sample.restfulbooker.utilities.helpers.APIHelpers;
 import com.sample.restfulbooker.utilities.setups.BaseAPISetup;
 import com.sample.restfulbooker.utilities.validations.BookingValidations;
+import io.restassured.response.Response;
+import org.testng.annotations.Test;
 
 public class GetBookingTest extends BaseAPISetup {
     BookingValidations bookingValidations = new BookingValidations();
