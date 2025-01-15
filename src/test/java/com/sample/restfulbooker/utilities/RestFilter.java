@@ -17,8 +17,7 @@ public class RestFilter implements Filter {
     /* Overriden this method for the purpose of catching the request and response and putting it in the Extent Report.
      * Will only be produced if the class is initialized and including it in the .filter() while building the request specs in the other methods. */
     @Override
-    public Response filter(FilterableRequestSpecification requestSpecification,
-                           FilterableResponseSpecification responseSpecification, FilterContext filterContext) {
+    public Response filter(FilterableRequestSpecification requestSpecification, FilterableResponseSpecification responseSpecification, FilterContext filterContext) {
         Response response = filterContext.next(requestSpecification, responseSpecification);
 
         if (getTest() != null) {

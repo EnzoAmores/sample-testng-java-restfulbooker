@@ -22,7 +22,7 @@ import static io.restassured.RestAssured.given;
 public class APIHelpers {
     private static final PropertiesManager pm = new PropertiesManager();
 
-    public static void checkServiceHealth() {
+    public void checkServiceHealth() {
         String skipDueToOutageMessage = "API Service is down. Skipping the test.";
         String skipDueToCodeIssueMessage = "API Service Health was not checked due to code issue. Exception Message: ";
 
@@ -43,7 +43,7 @@ public class APIHelpers {
         }
     }
 
-    public static Booking createBookingWithRandomData() {
+    public Booking createBookingWithRandomData() {
         Booking booking = null;
 
         try {
@@ -75,7 +75,7 @@ public class APIHelpers {
         return booking;
     }
 
-    public static Response deleteRequestWithReportingForDeleteBooking(String token, Integer bookingId) {
+    public Response deleteRequestWithReportingForDeleteBooking(String token, Integer bookingId) {
         Response response = null;
 
         try {
@@ -92,7 +92,7 @@ public class APIHelpers {
         return response;
     }
 
-    public static Response getRequestWithReportingForGetBooking(Integer bookingId) {
+    public Response getRequestWithReportingForGetBooking(Integer bookingId) {
         Response response = null;
 
         try {
@@ -107,7 +107,7 @@ public class APIHelpers {
         return response;
     }
 
-    public static Response postRequestWithReportingForCreateBooking(BookingDetails bookingRequestBody) {
+    public Response postRequestWithReportingForCreateBooking(BookingDetails bookingRequestBody) {
         Response response = null;
 
         try {
@@ -125,7 +125,7 @@ public class APIHelpers {
         return response;
     }
 
-    public static Response putRequestWithReportingForUpdateBooking(String token, Integer bookingId, BookingDetails bookingRequestBody) {
+    public Response putRequestWithReportingForUpdateBooking(String token, Integer bookingId, BookingDetails bookingRequestBody) {
         Response response = null;
 
         try {
@@ -144,7 +144,7 @@ public class APIHelpers {
         return response;
     }
 
-    public static String generateToken() {
+    public String generateToken() {
         String token = "";
 
         try {

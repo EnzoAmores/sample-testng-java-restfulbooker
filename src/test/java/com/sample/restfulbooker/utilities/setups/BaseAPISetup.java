@@ -10,10 +10,12 @@ import static org.hamcrest.Matchers.lessThan;
 
 /* Base Setup - API Only */
 public class BaseAPISetup {
+    APIHelpers apiHelpers = new APIHelpers();
+
     @BeforeTest
     public void setup() {
         setupAPIConfig();
-        APIHelpers.checkServiceHealth();
+        apiHelpers.checkServiceHealth();
     }
 
     public void setupAPIConfig() {

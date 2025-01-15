@@ -8,30 +8,31 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 public class DeleteBookingTest extends BaseAPISetup {
+    APIHelpers apiHelpers = new APIHelpers();
     BookingValidations bookingValidations = new BookingValidations();
 
+    // ================================================== Test Methods - Start ==================================================
     @Test
     public void deleteBookingHappyPath() {
-        Booking booking = APIHelpers.createBookingWithRandomData();
-        Response response = APIHelpers.deleteRequestWithReportingForDeleteBooking(APIHelpers.generateToken(),
-                booking.getBookingid());
+        Booking booking = apiHelpers.createBookingWithRandomData();
+        Response response = apiHelpers.deleteRequestWithReportingForDeleteBooking(apiHelpers.generateToken(), booking.getBookingid());
 
         bookingValidations.validateDeleteBookingSuccess(response);
     }
 
     @Test
     public void deleteBookingBadToken() {
-        Booking booking = APIHelpers.createBookingWithRandomData();
-        Response response = APIHelpers.deleteRequestWithReportingForDeleteBooking(null, booking.getBookingid());
+        Booking booking = apiHelpers.createBookingWithRandomData();
+        Response response = apiHelpers.deleteRequestWithReportingForDeleteBooking(null, booking.getBookingid());
 
         bookingValidations.validateBookingForbiddenFailure(response);
     }
 
     @Test
     public void deleteBookingBadId() {
-        Response response = APIHelpers.deleteRequestWithReportingForDeleteBooking(APIHelpers.generateToken(),
-                null);
+        Response response = apiHelpers.deleteRequestWithReportingForDeleteBooking(apiHelpers.generateToken(), null);
 
         bookingValidations.validateBookingMethodNotAllowedFailure(response);
     }
+    // ================================================== Test Methods - End ====================================================
 }

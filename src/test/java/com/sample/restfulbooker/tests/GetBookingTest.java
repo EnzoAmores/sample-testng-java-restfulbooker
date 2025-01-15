@@ -8,20 +8,23 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 public class GetBookingTest extends BaseAPISetup {
+    APIHelpers apiHelpers = new APIHelpers();
     BookingValidations bookingValidations = new BookingValidations();
 
+    // ================================================== Test Methods - Start ==================================================
     @Test
     public void getBookingHappyPath() {
-        Booking booking = APIHelpers.createBookingWithRandomData();
-        Response response = APIHelpers.getRequestWithReportingForGetBooking(booking.getBookingid());
+        Booking booking = apiHelpers.createBookingWithRandomData();
+        Response response = apiHelpers.getRequestWithReportingForGetBooking(booking.getBookingid());
 
         bookingValidations.validateBookingDetailsSuccess(booking.getBooking(), response);
     }
 
     @Test
     public void getBookingBadId() {
-        Response response = APIHelpers.getRequestWithReportingForGetBooking(null);
+        Response response = apiHelpers.getRequestWithReportingForGetBooking(null);
 
         bookingValidations.validateBookingNotFoundFailure(response);
     }
+    // ================================================== Test Methods - End ====================================================
 }
