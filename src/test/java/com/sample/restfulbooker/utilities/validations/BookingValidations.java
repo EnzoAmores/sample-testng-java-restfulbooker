@@ -44,12 +44,9 @@ public class BookingValidations {
         assertions.assertEquals(bookingResponseBody.getLastname(), bookingRequestBody.getLastname());
         assertions.assertEquals(bookingResponseBody.getTotalprice(), bookingRequestBody.getTotalprice());
         assertions.assertEquals(bookingResponseBody.getDepositpaid(), bookingRequestBody.getDepositpaid());
-        assertions.assertEquals(bookingResponseBody.getAdditionalneeds(),
-                bookingRequestBody.getAdditionalneeds());
-        assertions.assertEquals(bookingResponseBody.getBookingdates().getCheckin(),
-                bookingRequestBody.getBookingdates().getCheckin());
-        assertions.assertEquals(bookingResponseBody.getBookingdates().getCheckout(),
-                bookingRequestBody.getBookingdates().getCheckout());
+        assertions.assertEquals(bookingResponseBody.getAdditionalneeds(), bookingRequestBody.getAdditionalneeds());
+        assertions.assertEquals(bookingResponseBody.getBookingdates().getCheckin(), bookingRequestBody.getBookingdates().getCheckin());
+        assertions.assertEquals(bookingResponseBody.getBookingdates().getCheckout(), bookingRequestBody.getBookingdates().getCheckout());
         assertions.assertAll();
     }
 
@@ -59,20 +56,13 @@ public class BookingValidations {
         Assert.assertEquals(response.statusCode(), 200);
 
         assertions.assertNotNull(bookingResponseBody.getBookingid());
-        assertions.assertEquals(bookingResponseBody.getBooking().getFirstname(),
-                bookingRequestBody.getFirstname());
-        assertions.assertEquals(bookingResponseBody.getBooking().getLastname(),
-                bookingRequestBody.getLastname());
-        assertions.assertEquals(bookingResponseBody.getBooking().getTotalprice(),
-                bookingRequestBody.getTotalprice());
-        assertions.assertEquals(bookingResponseBody.getBooking().getDepositpaid(),
-                bookingRequestBody.getDepositpaid());
-        assertions.assertEquals(bookingResponseBody.getBooking().getAdditionalneeds(),
-                bookingRequestBody.getAdditionalneeds());
-        assertions.assertEquals(bookingResponseBody.getBooking().getBookingdates().getCheckin(),
-                bookingRequestBody.getBookingdates().getCheckin());
-        assertions.assertEquals(bookingResponseBody.getBooking().getBookingdates().getCheckout(),
-                bookingRequestBody.getBookingdates().getCheckout());
+        assertions.assertEquals(bookingResponseBody.getBooking().getFirstname(), bookingRequestBody.getFirstname());
+        assertions.assertEquals(bookingResponseBody.getBooking().getLastname(), bookingRequestBody.getLastname());
+        assertions.assertEquals(bookingResponseBody.getBooking().getTotalprice(), bookingRequestBody.getTotalprice());
+        assertions.assertEquals(bookingResponseBody.getBooking().getDepositpaid(), bookingRequestBody.getDepositpaid());
+        assertions.assertEquals(bookingResponseBody.getBooking().getAdditionalneeds(), bookingRequestBody.getAdditionalneeds());
+        assertions.assertEquals(bookingResponseBody.getBooking().getBookingdates().getCheckin(), bookingRequestBody.getBookingdates().getCheckin());
+        assertions.assertEquals(bookingResponseBody.getBooking().getBookingdates().getCheckout(), bookingRequestBody.getBookingdates().getCheckout());
         assertions.assertAll();
     }
 

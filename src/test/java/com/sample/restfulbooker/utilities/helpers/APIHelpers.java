@@ -24,7 +24,7 @@ public class APIHelpers {
 
     public static void checkServiceHealth() {
         String skipDueToOutageMessage = "API Service is down. Skipping the test.";
-        String skipDueToCodeIssueMessage = "API Service Health was not checked due to code issue. Please check. Skipping the test. Exception Message: ";
+        String skipDueToCodeIssueMessage = "API Service Health was not checked due to code issue. Exception Message: ";
 
         try {
             int statusCode;
