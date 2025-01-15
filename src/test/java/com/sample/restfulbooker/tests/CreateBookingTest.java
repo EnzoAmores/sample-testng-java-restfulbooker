@@ -13,8 +13,10 @@ import org.testng.annotations.Test;
 
 public class CreateBookingTest extends BaseAPISetup {
     Faker faker = new Faker();
+    APIHelpers apiHelpers = new APIHelpers();
     BookingValidations bookingValidations = new BookingValidations();
 
+    // ================================================== Test Methods - Start ==================================================
     @Test
     public void createBookingHappyPath() {
         BookingDetails bookingRequestBody = BookingDetails.builder()
@@ -29,7 +31,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingSuccess(bookingRequestBody, response);
     }
@@ -48,7 +50,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(null)
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingSuccess(bookingRequestBody, response);
     }
@@ -67,7 +69,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
@@ -86,7 +88,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
@@ -105,7 +107,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
@@ -124,7 +126,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
@@ -139,7 +141,7 @@ public class CreateBookingTest extends BaseAPISetup {
                 .bookingdates(null)
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
@@ -158,7 +160,7 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
@@ -176,8 +178,9 @@ public class CreateBookingTest extends BaseAPISetup {
                         .build())
                 .additionalneeds(faker.boardgame().name())
                 .build();
-        Response response = APIHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
+        Response response = apiHelpers.postRequestWithReportingForCreateBooking(bookingRequestBody);
 
         bookingValidations.validateBookingInternalServerErrorFailure(response);
     }
+    // ================================================== Test Methods - End ====================================================
 }
