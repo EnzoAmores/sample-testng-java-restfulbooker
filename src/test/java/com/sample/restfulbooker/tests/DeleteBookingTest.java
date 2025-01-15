@@ -12,8 +12,6 @@ public class DeleteBookingTest extends BaseAPISetup {
 
     @Test
     public void deleteBookingHappyPath() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         Response response = APIHelpers.deleteRequestWithReportingForDeleteBooking(APIHelpers.generateToken(),
                 booking.getBookingid());
@@ -23,8 +21,6 @@ public class DeleteBookingTest extends BaseAPISetup {
 
     @Test
     public void deleteBookingBadToken() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         Response response = APIHelpers.deleteRequestWithReportingForDeleteBooking(null, booking.getBookingid());
 
@@ -33,8 +29,6 @@ public class DeleteBookingTest extends BaseAPISetup {
 
     @Test
     public void deleteBookingBadId() {
-        APIHelpers.checkServiceHealth();
-
         Response response = APIHelpers.deleteRequestWithReportingForDeleteBooking(APIHelpers.generateToken(),
                 null);
 

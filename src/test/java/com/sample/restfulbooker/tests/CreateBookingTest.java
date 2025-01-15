@@ -17,8 +17,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingHappyPath() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())
@@ -38,8 +36,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingHappyPathNullAdditionalNeeds() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())
@@ -59,8 +55,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullFirstName() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(null)
                 .lastname(faker.name().lastName())
@@ -80,8 +74,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullLastName() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(null)
@@ -101,8 +93,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullTotalPrice() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())
@@ -122,8 +112,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullDepositPaid() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())
@@ -143,8 +131,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullBookingDates() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())
@@ -160,8 +146,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullCheckin() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())
@@ -181,8 +165,6 @@ public class CreateBookingTest extends BaseAPISetup {
 
     @Test
     public void createBookingNullCheckout() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails bookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())

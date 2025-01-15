@@ -18,8 +18,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingHappyPathAllFields() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -40,8 +38,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingHappyPathNullAdditionalNeeds() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -62,8 +58,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullFirstName() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(null)
@@ -84,8 +78,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullLastName() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -106,8 +98,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullTotalPrice() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -128,8 +118,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullDepositPaid() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -150,8 +138,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullBookingDates() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -168,8 +154,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullCheckin() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -190,8 +174,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadRequestNullCheckout() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -211,8 +193,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadToken() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
@@ -233,8 +213,6 @@ public class UpdateBookingTest extends BaseAPISetup {
 
     @Test
     public void updateBookingBadId() {
-        APIHelpers.checkServiceHealth();
-
         BookingDetails updateBookingRequestBody = BookingDetails.builder()
                 .firstname(faker.name().firstName())
                 .lastname(faker.name().lastName())

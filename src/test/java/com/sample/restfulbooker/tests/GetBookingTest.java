@@ -12,8 +12,6 @@ public class GetBookingTest extends BaseAPISetup {
 
     @Test
     public void getBookingHappyPath() {
-        APIHelpers.checkServiceHealth();
-
         Booking booking = APIHelpers.createBookingWithRandomData();
         Response response = APIHelpers.getRequestWithReportingForGetBooking(booking.getBookingid());
 
@@ -22,8 +20,6 @@ public class GetBookingTest extends BaseAPISetup {
 
     @Test
     public void getBookingBadId() {
-        APIHelpers.checkServiceHealth();
-
         Response response = APIHelpers.getRequestWithReportingForGetBooking(null);
 
         bookingValidations.validateBookingNotFoundFailure(response);
