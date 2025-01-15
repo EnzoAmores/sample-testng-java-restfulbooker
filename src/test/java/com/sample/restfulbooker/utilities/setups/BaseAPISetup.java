@@ -1,5 +1,6 @@
 package com.sample.restfulbooker.utilities.setups;
 
+import com.sample.restfulbooker.utilities.helpers.APIHelpers;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -12,6 +13,7 @@ public class BaseAPISetup {
     @BeforeTest
     public void setup() {
         setupAPIConfig();
+        APIHelpers.checkServiceHealth();
     }
 
     public void setupAPIConfig() {
