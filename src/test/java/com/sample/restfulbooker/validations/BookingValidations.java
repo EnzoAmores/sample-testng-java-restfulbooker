@@ -1,4 +1,4 @@
-package com.sample.restfulbooker.utilities.validations;
+package com.sample.restfulbooker.validations;
 
 import com.sample.restfulbooker.objects.api.Booking;
 import com.sample.restfulbooker.objects.api.BookingDetails;
@@ -8,8 +8,6 @@ import org.testng.asserts.SoftAssert;
 
 /* Validations - Booking */
 public class BookingValidations {
-    private final SoftAssert assertions = new SoftAssert();
-
     public void validateBookingBadRequestFailure(Response response) {
         Assert.assertEquals(response.statusCode(), 400);
         Assert.assertEquals(response.getBody().asPrettyString(), "Bad Request");
@@ -37,6 +35,7 @@ public class BookingValidations {
 
     public void validateBookingDetailsSuccess(BookingDetails bookingRequestBody, Response response) {
         final BookingDetails bookingResponseBody = response.getBody().as(BookingDetails.class);
+        SoftAssert assertions = new SoftAssert();
 
         Assert.assertEquals(response.statusCode(), 200);
 
@@ -52,6 +51,7 @@ public class BookingValidations {
 
     public void validateBookingSuccess(BookingDetails bookingRequestBody, Response response) {
         final Booking bookingResponseBody = response.getBody().as(Booking.class);
+        SoftAssert assertions = new SoftAssert();
 
         Assert.assertEquals(response.statusCode(), 200);
 
