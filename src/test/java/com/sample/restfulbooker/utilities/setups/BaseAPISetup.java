@@ -1,6 +1,6 @@
 package com.sample.restfulbooker.utilities.setups;
 
-import com.sample.restfulbooker.utilities.helpers.APIHelpers;
+import com.sample.restfulbooker.endpointcalls.BookingEndpointCalls;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -10,12 +10,12 @@ import static org.hamcrest.Matchers.lessThan;
 
 /* Base Setup - API Only */
 public class BaseAPISetup {
-    APIHelpers apiHelpers = new APIHelpers();
+    BookingEndpointCalls bookingEndpointCalls = new BookingEndpointCalls();
 
     @BeforeTest
     public void setup() {
         setupAPIConfig();
-        apiHelpers.checkServiceHealth();
+        bookingEndpointCalls.checkServiceHealth();
     }
 
     public void setupAPIConfig() {

@@ -1,36 +1,38 @@
 package com.sample.restfulbooker.tests;
 
+import com.sample.restfulbooker.data.BookingData;
 import com.sample.restfulbooker.objects.api.Booking;
-import com.sample.restfulbooker.utilities.helpers.APIHelpers;
+import com.sample.restfulbooker.endpointcalls.BookingEndpointCalls;
 import com.sample.restfulbooker.utilities.setups.BaseAPISetup;
-import com.sample.restfulbooker.utilities.validations.BookingValidations;
+import com.sample.restfulbooker.validations.BookingValidations;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 public class DeleteBookingTest extends BaseAPISetup {
-    APIHelpers apiHelpers = new APIHelpers();
+    BookingData bookingData = new BookingData();
+    BookingEndpointCalls bookingEndpointCalls = new BookingEndpointCalls();
     BookingValidations bookingValidations = new BookingValidations();
 
     // ================================================== Test Methods - Start ==================================================
     @Test
     public void deleteBookingHappyPath() {
-        Booking booking = apiHelpers.createBookingWithRandomData();
-        Response response = apiHelpers.deleteRequestWithReportingForDeleteBooking(apiHelpers.generateToken(), booking.getBookingid());
+        Booking booking = bookingData.createNewBooking();
+        Response response = bookingEndpointCalls.deleteRequestWithReportingForDeleteBooking(bookingData.generateToken(), booking.getBookingid());
 
         bookingValidations.validateDeleteBookingSuccess(response);
     }
 
     @Test
     public void deleteBookingBadToken() {
-        Booking booking = apiHelpers.createBookingWithRandomData();
-        Response response = apiHelpers.deleteRequestWithReportingForDeleteBooking(null, booking.getBookingid());
+        Booking booking = bookingData.createNewBooking();
+        Response response = bookingEndpointCalls.deleteRequestWithReportingForDeleteBooking(null, booking.getBookingid());
 
         bookingValidations.validateBookingForbiddenFailure(response);
     }
 
     @Test
     public void deleteBookingBadId() {
-        Response response = apiHelpers.deleteRequestWithReportingForDeleteBooking(apiHelpers.generateToken(), null);
+        Response response = bookingEndpointCalls.deleteRequestWithReportingForDeleteBooking(bookingData.generateToken(), null);
 
         bookingValidations.validateBookingMethodNotAllowedFailure(response);
     }
